@@ -1,0 +1,8 @@
+.number-not-zero {
+  color: red;
+  border: 10px solid yellow;
+}
+
+.number-zero {
+  border: 1px solid black;
+}
