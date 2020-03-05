@@ -40,8 +40,52 @@ const Animate = () => {
   ]);
 
   return (
-    <div className="example-container">
+    <div
+      className="example-container"
+      style={{ height: windowHeight, width: windowWidth }}
+    >
       <motion.div
+        className="drag-area"
+        ref={constraintsRef}
+        style={{
+          left: leftConstraint,
+          top: topConstraint,
+          width: dragConstraintWidth,
+          height: dragConstraintHeight
+        }}
+      >
+        <motion.div
+          className="picture-motion"
+          initial={{ scale: 0 }}
+          animate={{
+            scale: 1,
+            y: dragConstraintHeight / 2 - 707,
+            x: dragConstraintWidth / 2 - 1000
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 260,
+            damping: 20
+          }}
+          drag
+          dragElastic={0.1}
+          dragConstraints={
+            constraintsRef
+            //top: (1413 - windowHeight) * -1 - 100,
+            //left: (2000 - windowWidth) * -1,
+            //bottom: (1413 - windowHeight) * 1 - 100,
+            //right: (2000 - windowWidth) * 1
+          }
+        >
+          <img
+            className="picture-area"
+            src="https://i.imgur.com/D7poN81.jpg"
+            alt="A map of the kingdom of Craetho"
+          />
+        </motion.div>
+      </motion.div>
+
+      {/*<motion.div
         className="drag-area"
         ref={constraintsRef}
         style={{
@@ -61,7 +105,7 @@ const Animate = () => {
           src="https://i.imgur.com/D7poN81.jpg"
           alt="A map of the kingdom of Craetho"
         />
-      </motion.div>
+      </motion.div>*/}
     </div>
   );
 };
