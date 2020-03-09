@@ -19,17 +19,22 @@ const Animate = () => {
 
   useLayoutEffect(() => {
     console.log(
-      "I do stuff when the window width changes, width = " +
+      "I do stuff when the window refreshes, width = " +
         windowWidth +
         " height = " +
         windowHeight
     );
+    window.onresize = function() {
+      console.log(window.innerWidth);
+      console.log(window.innerHeight);
+    };
     setTopConstraint((1413 - windowHeight) * -1 - 100);
     setLeftConstraint((2000 - windowWidth) * -1);
     setDragConstraintWidth((2000 - windowWidth) * 2 + windowWidth);
     setDragConstraintHeight((1413 - windowHeight) * 2 + windowHeight + 200);
-    console.log("width = " + dragConstraintWidth);
-    console.log("height = " + dragConstraintHeight);
+
+    console.log("width of constraint box = " + dragConstraintWidth);
+    console.log("height of constraint box = " + dragConstraintHeight);
   }, [
     setLeftConstraint,
     dragConstraintWidth,
@@ -69,13 +74,7 @@ const Animate = () => {
           }}
           drag
           dragElastic={0.1}
-          dragConstraints={
-            constraintsRef
-            //top: (1413 - windowHeight) * -1 - 100,
-            //left: (2000 - windowWidth) * -1,
-            //bottom: (1413 - windowHeight) * 1 - 100,
-            //right: (2000 - windowWidth) * 1
-          }
+          dragConstraints={constraintsRef}
         >
           <img
             className="picture-area"
@@ -84,28 +83,6 @@ const Animate = () => {
           />
         </motion.div>
       </motion.div>
-
-      {/*<motion.div
-        className="drag-area"
-        ref={constraintsRef}
-        style={{
-          width: dragConstraintWidth,
-          height: dragConstraintHeight,
-          left: leftConstraint,
-          top: topConstraint
-        }}
-      />
-      <motion.div
-        className="picture-motion"
-        drag
-        dragConstraints={constraintsRef}
-      >
-        <img
-          className="picture-area"
-          src="https://i.imgur.com/D7poN81.jpg"
-          alt="A map of the kingdom of Craetho"
-        />
-      </motion.div>*/}
     </div>
   );
 };
