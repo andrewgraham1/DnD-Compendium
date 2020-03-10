@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Button from "../Button";
 
 import "./Counter.css";
-//import { getElementError } from "@testing-library/react";
 
 const Counter = () => {
   const [value, setValue] = useState(0);
