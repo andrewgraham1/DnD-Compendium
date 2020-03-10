@@ -18,7 +18,9 @@ body {
 }
 
 .picture-motion {
-  flex-basis: 0;
+  display: grid;
+  grid-template-columns: 38px 66px 72px 82px 56px 121px 96px 38px 17px 12px 9px 86px 11px 13px 85px 37px 14px 24px 12px 67px 58px 25px 27px 21px 11px 50px 27px 20px 83px 22px 60px 143px 131px 29px 98px 117px auto;
+  grid-template-rows: 39px 42px 82px 76px 57px 18px 48px 18px 26px 38px 23px 34px 37px 71px 49px 12px 40px 13px 62px 52px 27px 27px 18px 24px 10px 42px 17px 9px 69px 32px 32px 37px 20px 36px 177px;
   width: 2000px;
   align-self: center;
 }

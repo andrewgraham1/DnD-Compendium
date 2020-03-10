@@ -2,8 +2,7 @@ import * as React from "react";
 import { useRef, useState, useLayoutEffect } from "react";
 import { motion } from "framer-motion";
 import "./Animate.css";
-
-// let width = "Total Width: " + screen.width;
+import InfoBox from "../InfoBox";
 
 const Animate = () => {
   const windowWidth = window.innerWidth;
@@ -81,6 +80,7 @@ const Animate = () => {
             src="https://i.imgur.com/D7poN81.jpg"
             alt="A map of the kingdom of Craetho"
           />
+          <InfoBox />
         </motion.div>
       </motion.div>
     </div>
