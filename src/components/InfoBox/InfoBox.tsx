@@ -1,19 +1,14 @@
 import React from "react";
 import "./InfoBox.css";
+import Button from "../Button";
 
 const InfoBox = () => {
-  let test = "inherit";
   return (
-    <p
-      className="test"
-      onClick={() => {
-        console.log("click");
-        test = "none";
-      }}
-      style={{ display: test }}
-    >
+    <p></p>
+    /*<Button text="test" onClick={}>
+      {" "}
       This is the InfoBox
-    </p>
+    </Button>*/
   );
 };
 
