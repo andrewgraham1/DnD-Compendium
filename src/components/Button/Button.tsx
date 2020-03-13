@@ -2,16 +2,11 @@ import React from "react";
 import "./Button.css";
 
 interface Props {
-  text: string;
   onClick: () => void;
 }
 
-const Button: React.FC<Props> = ({ text, onClick }) => {
-  return (
-    <button className="myButton" onClick={onClick}>
-      {text}
-    </button>
-  );
+const Button: React.FC<Props> = ({ onClick }) => {
+  return <button className="myButton" onClick={onClick}></button>;
 };
 
 export default Button;

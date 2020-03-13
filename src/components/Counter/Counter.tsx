@@ -10,7 +10,7 @@ const Counter = () => {
 
   return (
     <section>
-      <Button text="Increment" onClick={() => setValue(value + 1)} />
+      <Button onClick={() => setValue(value + 1)} />
       <h2 className={numberClassName}>{value}</h2>
     </section>
   );

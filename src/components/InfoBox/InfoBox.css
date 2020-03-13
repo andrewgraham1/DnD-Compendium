@@ -3,8 +3,7 @@ body {
   margin: 0;
 }
 
-.test {
-  background-color: red;
+.position {
   grid-row-start: 25;
   grid-row-end: 29;
   grid-column-start: -17;

@@ -10,10 +10,10 @@ import LandingPage from "./screens/LandingPage";
 ReactDOM.render(
   <Router>
     <Switch>
-      <Route path="/test">
+      <Route path="/home">
         <TestPage />
       </Route>
-      <Route path="/home">
+      <Route path="/test">
         <LandingPage />
       </Route>
     </Switch>
