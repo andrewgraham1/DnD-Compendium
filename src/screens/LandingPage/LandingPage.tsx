@@ -1,13 +1,16 @@
 import React from "react";
 
 import "./LandingPage.css";
-import Counter from "../../components/Counter";
+import Footer from "../../components/PageStructure/Footer";
+import MainContent from "../../components/PageStructure/MainComponent";
+import Navbar from "../../components/PageStructure/Navbar";
 
 const LandingPage = () => {
   return (
     <div className="LandingPage">
-      <h1>Landing Page</h1>
-      <Counter />
+      <MainContent />
+      <Navbar />
+      <Footer />
     </div>
   );
 };

@@ -11,10 +11,10 @@ ReactDOM.render(
   <Router>
     <Switch>
       <Route path="/home">
-        <TestPage />
+        <LandingPage />
       </Route>
       <Route path="/test">
-        <LandingPage />
+        <TestPage />
       </Route>
     </Switch>
   </Router>,
