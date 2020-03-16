@@ -7,9 +7,7 @@ const MainContent = () => {
   const [count] = useState(0);
   return (
     <main className="craetho">
-      <div>
-        <Animate key={count} />
-      </div>
+      <Animate key={count} />
     </main>
   );
 };

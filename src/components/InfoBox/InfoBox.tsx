@@ -1,22 +1,30 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 import "./InfoBox.css";
-import Button from "../Button";
-
-const ChangePage = () => {
-  console.log("Change Page");
-};
 
 //Create a internal link using Router and create a workable button
 //below doesn't work
 
 const InfoBox = () => {
   return (
-    <div className="position">
+    <motion.div
+      className="position"
+      whileHover={{ scale: 1.7 }}
+      whileTap={{
+        scale: 0.8,
+        rotate: -360
+      }}
+    >
+      <img
+        className="linkResize"
+        src="https://i.imgur.com/C8x4jTb.png"
+        alt="Link to info about Whiteridge"
+      />
       <a className="link" href="/test">
-        <Button onClick={ChangePage}></Button>
+        <link />
       </a>
-    </div>
+    </motion.div>
   );
 };
 

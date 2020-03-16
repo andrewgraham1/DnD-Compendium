@@ -77,7 +77,8 @@ const Animate = () => {
         >
           <img
             className="picture-area"
-            src="https://i.imgur.com/D7poN81.jpg"
+            /*src="https://i.imgur.com/D7poN81.jpg"  full map with towns */
+            src="https://i.imgur.com/JgIyvFY.jpg" /* map with whiteridge removed - test*/
             alt="A map of the kingdom of Craetho"
           />
           <InfoBox />
