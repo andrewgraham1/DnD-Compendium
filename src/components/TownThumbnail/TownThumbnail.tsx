@@ -37,8 +37,7 @@ const TownThumbnail: React.FC<Props> = ({
       className="position"
       whileHover={{ scale: 1.7 }}
       whileTap={{
-        scale: 0.8,
-        rotate: -360
+        scale: 0.8
       }}
     >
       <img className="linkResize" src={source} alt={alt} />
