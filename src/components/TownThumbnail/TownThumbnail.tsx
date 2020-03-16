@@ -3,25 +3,37 @@ import { motion } from "framer-motion";
 
 import "./TownThumbnail.css";
 
-//Create a internal link using Router and create a workable button
-//below doesn't work
+interface Props {
+  townName: string;
+  gridRowStart: string;
+  gridRowEnd: string;
+  gridColumnStart: string;
+  gridColumnEnd: string;
+  source: string;
+  link: string;
+  alt: string;
+}
 
-const TownThumbnail = (props: {
-  gridRowStart: any;
-  gridRowEnd: any;
-  gridColumnStart: any;
-  gridColumnEnd: any;
+const TownThumbnail: React.FC<Props> = ({
+  townName,
+  gridRowStart,
+  gridRowEnd,
+  gridColumnStart,
+  gridColumnEnd,
+  source,
+  link,
+  alt
 }) => {
-  const styles = {
-    gridRowStart: props.gridRowStart,
-    gridRowEnd: props.gridRowEnd,
-    gridColumnStart: props.gridColumnStart,
-    gridColumnEnd: props.gridColumnEnd
+  const Styles = {
+    gridRowStart: gridRowStart,
+    gridRowEnd: gridRowEnd,
+    gridColumnStart: gridColumnStart,
+    gridColumnEnd: gridColumnEnd
   };
 
   return (
     <motion.div
-      style={styles}
+      style={Styles}
       className="position"
       whileHover={{ scale: 1.7 }}
       whileTap={{
@@ -29,13 +41,8 @@ const TownThumbnail = (props: {
         rotate: -360
       }}
     >
-      <img
-        style={styles}
-        className="linkResize"
-        src="https://i.imgur.com/C8x4jTb.png"
-        alt="Link to info about Whiteridge"
-      />
-      <a className="link" href="/test">
+      <img className="linkResize" src={source} alt={alt} />
+      <a className="link" href={link}>
         <link />
       </a>
     </motion.div>
