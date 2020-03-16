@@ -1,8 +1,9 @@
 import * as React from "react";
 import { useRef, useState, useLayoutEffect } from "react";
 import { motion } from "framer-motion";
+
 import "./Animate.css";
-import InfoBox from "../InfoBox";
+import TownThumbnail from "../TownThumbnail";
 
 const Animate = () => {
   const windowWidth = window.innerWidth;
@@ -81,7 +82,18 @@ const Animate = () => {
             src="https://i.imgur.com/JgIyvFY.jpg" /* map with whiteridge removed - test*/
             alt="A map of the kingdom of Craetho"
           />
-          <InfoBox />
+          <TownThumbnail
+            gridRowStart="25"
+            gridRowEnd="29"
+            gridColumnStart="-17"
+            gridColumnEnd="-12"
+          />
+          <TownThumbnail
+            gridRowStart="31"
+            gridRowEnd="33"
+            gridColumnStart="-28"
+            gridColumnEnd="-25"
+          />
         </motion.div>
       </motion.div>
     </div>
