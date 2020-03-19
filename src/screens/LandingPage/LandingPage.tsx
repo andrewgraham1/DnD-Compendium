@@ -9,8 +9,8 @@ import Loader from "../../components/Loader";
 const LandingPage = () => {
   return (
     <div className="LandingPage">
-      <Loader done={false} />
-      <MainContent />
+      <Loader />
+      {/*<MainContent />*/}
       <Navbar />
       <Footer />
     </div>

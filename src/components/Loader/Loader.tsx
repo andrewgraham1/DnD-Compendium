@@ -1,18 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import FadeIn from "react-fade-in";
 import Lottie from "react-lottie";
 import ReactLoading from "react-loading";
 import "./Loader.css";
+import MainContent from "../PageStructure/MainComponent";
 
-interface Props {
+interface type {
   done: boolean;
 }
 
-const Loader: React.FC<Props> = ({ done }) => {
-  console.log("loader");
+const Loader = () => {
+  const [done, setDone] = useState(false);
+  setTimeout(() => {
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then(response => response.json())
+      .then(json => setDone(true));
+  }, 1200);
+
   return (
     <div className="loaderContainer">
-      <ReactLoading className="loader" type={"bars"} color={"white"} />
+      {!done ? (
+        <ReactLoading className="loader" type={"bars"} color={"white"} />
+      ) : (
+        <MainContent />
+      )}
     </div>
   );
 };

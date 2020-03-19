@@ -13,7 +13,7 @@ ReactDOM.render(
       <Route path="/">
         <LandingPage />
       </Route>
-      <Route path="/test">
+      <Route path="/Whiteridge">
         <TestPage />
       </Route>
     </Switch>
