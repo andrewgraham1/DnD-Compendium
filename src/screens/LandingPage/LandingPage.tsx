@@ -2,7 +2,7 @@ import React from "react";
 
 import "./LandingPage.css";
 import Footer from "../../components/PageStructure/Footer";
-import MainContent from "../../components/PageStructure/MainComponent";
+//import MainContent from "../../components/PageStructure/MainComponent";
 import Navbar from "../../components/PageStructure/Navbar";
 import Loader from "../../components/Loader";
 

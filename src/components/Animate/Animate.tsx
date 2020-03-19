@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useRef, useState, useLayoutEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 import "./Animate.css";
@@ -29,33 +29,20 @@ const Animate = () => {
   const [dragConstraintHeight, setDragConstraintHeight] = useState(0);
   const [leftConstraint, setLeftConstraint] = useState(0);
   const [topConstraint, setTopConstraint] = useState(0);
+  const [resize, SetResize] = useState(0);
 
-  useLayoutEffect(() => {
-    console.log(
-      "I do stuff when the window refreshes, width = " +
-        windowWidth +
-        " height = " +
-        windowHeight
+  useEffect(() => {
+    //Sets the constraint box based on the browser size
+    setTopConstraint((1413 - window.innerHeight) * -1 - 100);
+    setLeftConstraint((2000 - window.innerWidth) * -1);
+    setDragConstraintWidth((2000 - window.innerWidth) * 2 + window.innerWidth);
+    setDragConstraintHeight(
+      (1413 - window.innerHeight) * 2 + window.innerHeight + 200
     );
     window.onresize = function() {
-      console.log(window.innerWidth);
-      console.log(window.innerHeight);
+      SetResize(window.innerHeight + window.innerWidth);
     };
-    setTopConstraint((1413 - windowHeight) * -1 - 100);
-    setLeftConstraint((2000 - windowWidth) * -1);
-    setDragConstraintWidth((2000 - windowWidth) * 2 + windowWidth);
-    setDragConstraintHeight((1413 - windowHeight) * 2 + windowHeight + 200);
-
-    console.log("width of constraint box = " + dragConstraintWidth);
-    console.log("height of constraint box = " + dragConstraintHeight);
-  }, [
-    setLeftConstraint,
-    dragConstraintWidth,
-    dragConstraintHeight,
-    windowHeight,
-    windowWidth,
-    setTopConstraint
-  ]);
+  }, [dragConstraintHeight, dragConstraintWidth, resize]);
 
   return (
     <div
