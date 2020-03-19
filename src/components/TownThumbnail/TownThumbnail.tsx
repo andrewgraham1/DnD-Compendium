@@ -35,13 +35,14 @@ const TownThumbnail: React.FC<Props> = ({
     <motion.div
       style={Styles}
       className="position"
-      whileHover={{ scale: 1.7 }}
+      whileHover={{ scale: 1.7, zIndex: 100 }}
       whileTap={{
         scale: 0.8
       }}
     >
-      <img className="linkResize" src={source} alt={alt} />
       <a className="link" href={link}>
+        <img className="linkResize" src={source} alt={alt} />
+
         <link />
       </a>
     </motion.div>
