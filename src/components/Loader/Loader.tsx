@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import ReactLoading from "react-loading";
 
 import "./Loader.css";
@@ -21,13 +21,13 @@ const Loader = () => {
 
   return (
     <div className="loaderContainer">
-      <React.Suspense
+      <Suspense
         fallback={
           <ReactLoading className="loader" type={"bars"} color={"white"} />
         }
       >
         <MainComponent />
-      </React.Suspense>
+      </Suspense>
     </div>
   );
 };
