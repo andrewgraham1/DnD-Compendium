@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import ReactLoading from "react-loading";
 
 import "./Loader.css";
@@ -9,20 +9,22 @@ interface type {
 }
 
 const Loader = () => {
-  const [done, setDone] = useState(false);
+  /*const [done, setDone] = useState(false);
   setTimeout(() => {
     fetch("https://jsonplaceholder.typicode.com/posts")
       .then(response => response.json())
       .then(json => setDone(true));
-  }, 1200);
+  }, 1200);*/
 
   return (
     <div className="loaderContainer">
-      {!done ? (
-        <ReactLoading className="loader" type={"bars"} color={"white"} />
-      ) : (
+      <React.Suspense
+        fallback={
+          <ReactLoading className="loader" type={"bars"} color={"white"} />
+        }
+      >
         <MainContent />
-      )}
+      </React.Suspense>
     </div>
   );
 };
