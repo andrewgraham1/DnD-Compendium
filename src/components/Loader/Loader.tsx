@@ -2,11 +2,14 @@ import React from "react";
 import ReactLoading from "react-loading";
 
 import "./Loader.css";
-import MainContent from "../PageStructure/MainComponent";
 
-interface type {
+const MainComponent = React.lazy(() =>
+  import("../PageStructure/MainComponent")
+);
+
+/*interface type {
   done: boolean;
-}
+}*/
 
 const Loader = () => {
   /*const [done, setDone] = useState(false);
@@ -23,7 +26,7 @@ const Loader = () => {
           <ReactLoading className="loader" type={"bars"} color={"white"} />
         }
       >
-        <MainContent />
+        <MainComponent />
       </React.Suspense>
     </div>
   );
