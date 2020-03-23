@@ -42,6 +42,7 @@ const TownThumbnail: React.FC<Props> = ({
     >
       <a className="link" href={link}>
         <img className="linkResize" src={source} alt={alt} />
+
         <link />
       </a>
     </motion.div>
