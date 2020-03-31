@@ -22,6 +22,7 @@ const Animate = () => {
   const windowWidth = window.innerWidth;
   const windowHeight = window.innerHeight;
   const constraintsRef = useRef(null);
+  const scale = 1;
 
   // https://reactjs.org/docs/hooks-intro.html
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
@@ -33,11 +34,13 @@ const Animate = () => {
 
   useEffect(() => {
     //Sets the constraint box based on the browser size
-    setTopConstraint((1413 - window.innerHeight) * -1 - 100);
-    setLeftConstraint((2000 - window.innerWidth) * -1);
-    setDragConstraintWidth((2000 - window.innerWidth) * 2 + window.innerWidth);
+    setTopConstraint((scale * 1413 - window.innerHeight) * -1 - 100);
+    setLeftConstraint((scale * 2000 - window.innerWidth) * -1);
+    setDragConstraintWidth(
+      (scale * 2000 - window.innerWidth) * 2 + window.innerWidth
+    );
     setDragConstraintHeight(
-      (1413 - window.innerHeight) * 2 + window.innerHeight + 200
+      (scale * 1413 - window.innerHeight) * 2 + window.innerHeight + 200
     );
     window.onresize = function() {
       SetResize(window.innerHeight + window.innerWidth);
@@ -63,7 +66,7 @@ const Animate = () => {
           className="picture-motion"
           initial={{ scale: 0 }}
           animate={{
-            scale: 1,
+            scale: scale,
             y: dragConstraintHeight / 2 - 707,
             x: dragConstraintWidth / 2 - 1000
           }}
