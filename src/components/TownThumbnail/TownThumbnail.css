@@ -14,7 +14,7 @@ body {
 }
 
 .linkResize {
-  width: 125px;
+  width: inherit;
   position: relative;
   align-self: center;
 }

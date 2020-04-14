@@ -22,17 +22,17 @@ const Animate = () => {
   const windowWidth = window.innerWidth;
   const windowHeight = window.innerHeight;
   const constraintsRef = useRef(null);
-  const scale = 1;
 
-  // https://reactjs.org/docs/hooks-intro.html
-  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
   const [dragConstraintWidth, setDragConstraintWidth] = useState(0);
   const [dragConstraintHeight, setDragConstraintHeight] = useState(0);
   const [leftConstraint, setLeftConstraint] = useState(0);
   const [topConstraint, setTopConstraint] = useState(0);
   const [resize, SetResize] = useState(0);
+  let [scale, SetScale] = useState(1);
 
   useEffect(() => {
+    SetScale((scale = 1));
+    console.log(scale);
     //Sets the constraint box based on the browser size
     setTopConstraint((scale * 1413 - window.innerHeight) * -1 - 100);
     setLeftConstraint((scale * 2000 - window.innerWidth) * -1);
@@ -42,10 +42,10 @@ const Animate = () => {
     setDragConstraintHeight(
       (scale * 1413 - window.innerHeight) * 2 + window.innerHeight + 200
     );
-    window.onresize = function() {
+    window.onresize = function () {
       SetResize(window.innerHeight + window.innerWidth);
     };
-  }, [dragConstraintHeight, dragConstraintWidth, resize]);
+  }, [dragConstraintHeight, dragConstraintWidth, resize, scale]);
 
   return (
     <div
@@ -59,7 +59,7 @@ const Animate = () => {
           left: leftConstraint,
           top: topConstraint,
           width: dragConstraintWidth,
-          height: dragConstraintHeight
+          height: dragConstraintHeight,
         }}
       >
         <motion.div
@@ -68,12 +68,12 @@ const Animate = () => {
           animate={{
             scale: scale,
             y: dragConstraintHeight / 2 - 707,
-            x: dragConstraintWidth / 2 - 1000
+            x: dragConstraintWidth / 2 - 1000,
           }}
           transition={{
             type: "spring",
             stiffness: 260,
-            damping: 20
+            damping: 20,
           }}
           drag
           dragElastic={0.1}
