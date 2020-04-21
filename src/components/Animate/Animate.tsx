@@ -28,24 +28,19 @@ const Animate = () => {
   const [leftConstraint, setLeftConstraint] = useState(0);
   const [topConstraint, setTopConstraint] = useState(0);
   const [resize, SetResize] = useState(0);
-  let [scale, SetScale] = useState(1);
 
   useEffect(() => {
-    SetScale((scale = 1));
-    console.log(scale);
     //Sets the constraint box based on the browser size
-    setTopConstraint((scale * 1413 - window.innerHeight) * -1 - 100);
-    setLeftConstraint((scale * 2000 - window.innerWidth) * -1);
-    setDragConstraintWidth(
-      (scale * 2000 - window.innerWidth) * 2 + window.innerWidth
-    );
+    setTopConstraint((1413 - window.innerHeight) * -1 - 100);
+    setLeftConstraint((2000 - window.innerWidth) * -1);
+    setDragConstraintWidth((2000 - window.innerWidth) * 2 + window.innerWidth);
     setDragConstraintHeight(
-      (scale * 1413 - window.innerHeight) * 2 + window.innerHeight + 200
+      (1413 - window.innerHeight) * 2 + window.innerHeight + 200
     );
-    window.onresize = function () {
+    window.onresize = () => {
       SetResize(window.innerHeight + window.innerWidth);
     };
-  }, [dragConstraintHeight, dragConstraintWidth, resize, scale]);
+  }, [dragConstraintHeight, dragConstraintWidth, resize]);
 
   return (
     <div
@@ -64,9 +59,10 @@ const Animate = () => {
       >
         <motion.div
           className="picture-motion"
+          //onWheel={() => console.log("mouse wheel")}
           initial={{ scale: 0 }}
           animate={{
-            scale: scale,
+            scale: 1,
             y: dragConstraintHeight / 2 - 707,
             x: dragConstraintWidth / 2 - 1000,
           }}

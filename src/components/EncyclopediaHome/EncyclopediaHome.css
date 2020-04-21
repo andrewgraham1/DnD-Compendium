@@ -1,0 +1,11 @@
+.encyclopedianContainer {
+  display: grid;
+  top: 20%;
+  bottom: 20%;
+  left: 10%;
+  right: 10%;
+  padding: 0px;
+  position: absolute;
+  justify-self: center;
+  background-color: beige;
+}

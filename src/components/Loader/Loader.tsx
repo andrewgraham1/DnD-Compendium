@@ -1,6 +1,8 @@
 import React, { Suspense } from "react";
 import ReactLoading from "react-loading";
 
+// CURRENTLY BROKEN
+
 import "./Loader.css";
 
 const MainComponent = React.lazy(() =>

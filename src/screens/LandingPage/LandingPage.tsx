@@ -2,16 +2,16 @@ import React from "react";
 
 import "./LandingPage.css";
 import Footer from "../../components/PageStructure/Footer";
-//import MainContent from "../../components/PageStructure/MainComponent";
 import Navbar from "../../components/PageStructure/Navbar";
-import Loader from "../../components/Loader";
+import MainContent from "../../components/PageStructure/MainComponent";
+import EncyclopediaHome from "../../components/EncyclopediaHome";
 
 const LandingPage = () => {
   return (
     <div className="LandingPage">
-      <Loader />
-      {/*<MainContent />*/}
+      <MainContent />
       <Navbar />
+      <EncyclopediaHome />
       <Footer />
     </div>
   );
