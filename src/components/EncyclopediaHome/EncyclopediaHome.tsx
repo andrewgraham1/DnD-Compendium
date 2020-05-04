@@ -6,7 +6,11 @@ import SignUpForm from "../SignUpForm";
 const EncyclopediaHome = () => {
   return (
     <div className="encyclopedianContainer">
-      <SignUpForm />
+      <div className="Kingdoms" />
+      <div className="Settlements" />
+      <div className="Characters" />
+      <div className="Items" />
+      <div className="Goods" />
     </div>
   );
 };
