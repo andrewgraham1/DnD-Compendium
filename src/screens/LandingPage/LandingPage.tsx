@@ -11,7 +11,7 @@ const LandingPage = () => {
     <div className="LandingPage">
       <MainContent />
       <Navbar />
-      <EncyclopediaHome />
+      {/*<EncyclopediaHome />*/}
       <Footer />
     </div>
   );
